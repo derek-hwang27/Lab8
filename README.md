@@ -1,5 +1,5 @@
 # Lab8_Starter
-Author: Derek Hwang
+Author: Derek Hwang and Michael Shao
 
 ## Test Results
 - [SumTest Result](sumtest.png)
