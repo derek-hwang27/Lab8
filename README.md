@@ -26,8 +26,8 @@ We'd expect our puppeteer tests to run without a browser UI, i.e. there will be 
 
 1. What would your beforeAll callback look like if you wanted to start from the settings page before every test case?
 
-beforeAll(async () => {
-    await page.goto('http://127.0.0.1:5500');
-    await page.click("img");
-    await page.waitForTimeout(500);
+> beforeAll(async () => { \
+&nbsp;&nbsp;&nbsp;&nbsp;await page.goto('http://127.0.0.1:5500'); \
+&nbsp;&nbsp;&nbsp;&nbsp;await page.click("img"); \
+&nbsp;&nbsp;&nbsp;&nbsp;await page.waitForTimeout(500); \
   });
