@@ -201,9 +201,35 @@ describe('Basic user flow for SPA ', () => {
 
   // define and implement test16: Verify the entry page contents is correct when clicking on the second entry
   it('Test16: Entry2 Content', async () => {
-    
+    let eTitle = await page.$("entry-page");
+    let eTitleData = await eTitle.getProperty("entry");
+    let eTitleJSON = await eTitleData.jsonValue();
 
-  });
+    let allContentCorrect = true;
+
+    if (eTitleJSON.title != "Run, Forrest! Run!") {
+      allContentCorrect = false;
+    }
+
+    if (eTitleJSON.date != "4/26/2021") {
+      allContentCorrect = false;
+    }
+
+    if (eTitleJSON.content != "Mama always said life was like a box of chocolates. You never know what you're gonna get.") {
+      allContentCorrect = false;
+    }
+
+    if (eTitleJSON.image.src != "https://s.abcnews.com/images/Entertainment/HT_forrest_gump_ml_140219_4x3_992.jpg") {
+      allContentCorrect = false;
+    }
+
+    if (eTitleJSON.image.alt != "forrest running") {
+      allContentCorrect = false;
+    }
+
+    expect(allContentCorrect).toBe(true);
+
+  }, 10000);
 
   // create your own test 17
   it ("Test17: Clicking back, URL should be home", async() => {
